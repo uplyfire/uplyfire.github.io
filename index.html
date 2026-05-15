@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uplyfire — Practical apps for everyday life</title>
+<meta name="description" content="Uplyfire is an independent app studio building small, privacy-respecting Android apps — financial calculators, image converters, PDF tools and more.">
+<meta name="author" content="Uplyfire">
+<meta name="theme-color" content="#0f766e">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Uplyfire — Practical apps for everyday life">
+<meta property="og:description" content="Small, focused Android apps that respect your privacy and just work.">
+<meta property="og:url" content="https://uplyfire.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://uplyfire.github.io/assets/hero.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M9 22V10h3v9.5h6V22H9z' fill='white'/%3E%3Cpath d='M21 10l-3 3 3 3v-2.5l4 4-2 2 3 3h-9V10h4z' fill='white' opacity='0.8'/%3E%3C/svg%3E" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1c1917;
+  background: #fafaf9;
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 250, 249, 0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #1c1917; }
+.brand-mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #0f766e, #14b8a6); display: grid; place-items: center; color: white; font-weight: 800; font-size: 16px; letter-spacing: -0.5px; }
+.nav-links { display: flex; gap: 32px; font-size: 14px; color: #57534e; font-weight: 500; }
+.nav-links a:hover { color: #1c1917; }
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* Hero */
+.hero {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url('assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 118, 110, 0.78));
+  z-index: -1;
+}
+.hero .container { padding-top: 96px; padding-bottom: 96px; text-align: center; }
+.hero .eyebrow {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.hero .lead {
+  font-size: clamp(17px, 2vw, 20px);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: white; color: #0f766e; }
+.btn-primary:hover { background: #f0fdfa; box-shadow: 0 10px 25px -10px rgba(15, 118, 110, 0.5); }
+.btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(8px); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Sections */
+section { padding: 96px 0; }
+.section-eyebrow { color: #0f766e; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
+.section-lead { font-size: 18px; color: #57534e; max-width: 580px; margin-bottom: 56px; }
+
+/* Apps grid */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.app-card {
+  background: white;
+  border: 1px solid #e7e5e4;
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex; flex-direction: column;
+}
+.app-card:hover { border-color: #14b8a6; transform: translateY(-2px); box-shadow: 0 20px 40px -20px rgba(15, 118, 110, 0.25); }
+.app-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+.app-icon svg { width: 28px; height: 28px; }
+.app-name { font-size: 19px; font-weight: 700; margin-bottom: 6px; color: #1c1917; }
+.app-tagline { font-size: 14px; color: #78716c; margin-bottom: 20px; flex-grow: 1; line-height: 1.55; }
+.app-link {
+  font-size: 14px; font-weight: 600; color: #0f766e;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: gap 0.15s ease;
+}
+.app-link:hover { gap: 8px; }
+
+/* About */
+.about { background: white; border-top: 1px solid #e7e5e4; border-bottom: 1px solid #e7e5e4; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+.about-text p { font-size: 17px; color: #44403c; margin-bottom: 18px; line-height: 1.7; }
+.about-values { display: grid; gap: 16px; margin-top: 32px; }
+.value-item { display: flex; gap: 16px; align-items: flex-start; }
+.value-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; background: #ccfbf1; color: #0f766e; display: grid; place-items: center; }
+.value-icon svg { width: 20px; height: 20px; }
+.value-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.value-item p { font-size: 14px; color: #78716c; margin: 0; }
+
+/* Contact */
+.contact { text-align: center; }
+.contact-card {
+  background: linear-gradient(135deg, #042f2e 0%, #0f766e 100%);
+  border-radius: 24px;
+  padding: 64px 32px;
+  color: white;
+}
+.contact-card h2 { font-size: clamp(28px, 4vw, 36px); margin-bottom: 12px; font-weight: 800; }
+.contact-card p { color: rgba(255, 255, 255, 0.8); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.contact-email { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: white; color: #0f766e; border-radius: 10px; font-weight: 600; font-size: 16px; transition: transform 0.15s ease; }
+.contact-email:hover { transform: translateY(-1px); }
+
+/* Footer */
+.site-footer { background: #1c1917; color: #a8a29e; padding: 64px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.footer-brand .brand-mark { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+.footer-brand .brand { color: white; margin-bottom: 12px; }
+.footer-brand p { font-size: 14px; color: #78716c; max-width: 280px; }
+.footer-col h4 { color: white; font-size: 14px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 14px; color: #a8a29e; transition: color 0.15s ease; }
+.footer-col a:hover { color: white; }
+.footer-bottom { border-top: 1px solid #292524; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #78716c; }
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="brand" aria-label="Uplyfire — home">
+      <span class="brand-mark">U</span>
+      <span>Uplyfire</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Independent Android studio</span>
+    <h1>Practical apps<br>for everyday life</h1>
+    <p class="lead">We build small, focused Android apps that respect your privacy and just work — financial calculators, image converters, PDF tools, and more.</p>
+    <div class="cta-row">
+      <a href="#apps" class="btn btn-primary">Browse our apps
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener" class="btn btn-secondary">View on Google Play</a>
+    </div>
+  </div>
+</section>
+
+<section id="apps">
+  <div class="container">
+    <div class="section-eyebrow">Our apps</div>
+    <h2 class="section-title">Useful tools, free on Google Play</h2>
+    <p class="section-lead">A growing collection of focused utilities for Android. No accounts, no servers, no nonsense.</p>
+
+    <div class="apps-grid">
+
+      <article class="app-card">
+        <div class="app-icon" style="background: linear-gradient(135deg, #059669, #10b981);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="app-name">Compoundly</h3>
+        <p class="app-tagline">Compound interest calculator with goal mode, multi-currency support and PDF export. See your money grow.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.uplyfire.compoundly" target="_blank" rel="noopener" class="app-link">Get on Google Play
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="app-card">
+        <div class="app-icon" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <h3 class="app-name">Image to WebP</h3>
+        <p class="app-tagline">Batch-convert JPG, PNG and HEIC images to WebP with quality control. Smaller files, same look.</p>
+        <a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener" class="app-link">View on Google Play
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="app-card">
+        <div class="app-icon" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg>
+        </div>
+        <h3 class="app-name">HEIC Converter</h3>
+        <p class="app-tagline">Convert Apple HEIC photos to JPG or PNG in seconds. Keep originals or batch-export.</p>
+        <a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener" class="app-link">View on Google Play
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="app-card">
+        <div class="app-icon" style="background: linear-gradient(135deg, #dc2626, #f97316);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3 class="app-name">Video Compressor</h3>
+        <p class="app-tagline">Shrink videos without losing what matters. Tune resolution, bitrate and format on-device.</p>
+        <a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener" class="app-link">View on Google Play
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="app-card">
+        <div class="app-icon" style="background: linear-gradient(135deg, #be185d, #ec4899);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <h3 class="app-name">Photo to PDF</h3>
+        <p class="app-tagline">Merge photos into a single PDF — receipts, documents, notes. Reorder, rotate and share.</p>
+        <a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener" class="app-link">View on Google Play
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+      <article class="app-card">
+        <div class="app-icon" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        </div>
+        <h3 class="app-name">MapGenius</h3>
+        <p class="app-tagline">Smart maps with custom waypoints and offline support — plan trips and never lose your way.</p>
+        <a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener" class="app-link">View on Google Play
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-title">A small studio with one rule: keep it useful.</h2>
+        <p>Uplyfire is an independent Android studio. We build small apps that solve one problem well — without bloat, dark patterns, or selling your data.</p>
+        <p>Every app is designed to run mostly on your device. We use established services like Google Play Billing for purchases and Firebase for diagnostics, but never collect more than what's needed to keep things working.</p>
+      </div>
+
+      <div class="about-values">
+        <div class="value-item">
+          <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h3>Privacy by default</h3><p>Your data stays on your device. Analytics and crash reports are consent-gated and pseudonymous.</p></div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h3>One-time purchases</h3><p>No subscriptions for the basic feature set. Pro upgrades unlock once, forever.</p></div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h3>Built to last</h3><p>Apps maintained and updated — not abandoned after launch. Bugs get fixed, fast.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-card">
+      <h2>Have feedback or a question?</h2>
+      <p>We answer every email — whether you found a bug, want a new feature, or have a question about your data.</p>
+      <a href="mailto:uplyfire@gmail.com" class="contact-email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        uplyfire@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark">U</span>
+          <span>Uplyfire</span>
+        </div>
+        <p>Practical Android apps that respect your privacy and just work.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Apps</h4>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/details?id=com.uplyfire.compoundly" target="_blank" rel="noopener">Compoundly</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener">Image to WebP</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener">HEIC Converter</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener">Video Compressor</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener">Photo to PDF</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener">MapGenius</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/legal/compoundly/privacy-policy">Compoundly — Privacy</a></li>
+          <li><a href="/legal/compoundly/terms">Compoundly — Terms</a></li>
+          <li><a href="/legal/imagetowebp/privacy-policy">Image to WebP — Privacy</a></li>
+          <li><a href="/legal/mapgenius/privacy-policy">MapGenius — Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:uplyfire@gmail.com">uplyfire@gmail.com</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6632140428451962362" target="_blank" rel="noopener">All apps on Play</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Uplyfire. All rights reserved.</span>
+      <span>Made with care for Android.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

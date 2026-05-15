@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://uplyfire.github.io/</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/legal/compoundly/privacy-policy</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/legal/compoundly/terms</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
