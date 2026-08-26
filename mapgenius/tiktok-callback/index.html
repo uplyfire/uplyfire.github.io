@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- OAuth bridge: TikTok requires an HTTPS redirect URI. This page forwards
+     the authorization result to the local MapGenius Publisher tool. -->
+<html lang="en">
+<head><meta charset="utf-8"><title>MapGenius Publisher — connecting…</title>
+<meta name="robots" content="noindex"></head>
+<body style="font-family:system-ui;padding:2rem">
+<p id="msg">Connecting to MapGenius Publisher…</p>
+<script>
+(function () {
+  var qs = location.search || '';
+  var target = 'http://localhost:8210/callback' + qs;
+  location.replace(target);
+  setTimeout(function () {
+    document.getElementById('msg').innerHTML =
+      'If nothing happened, make sure MapGenius Publisher is running locally, then ' +
+      '<a href="' + target + '">click here</a>.';
+  }, 1500);
+})();
+</script>
+</body>
+</html>
