@@ -7,16 +7,32 @@
 <meta name="description" content="MapGenius is a free world geography quiz for Android: find all 243 countries, capitals, flags, rivers and more on a real interactive map. By Uplyfire.">
 <style>
  body{font-family:system-ui,-apple-system,sans-serif;margin:0;color:#13233A;background:#FFFDF8}
+ nav{background:#13233A;padding:.7rem 1rem;text-align:center}
+ nav a{color:#fff;text-decoration:none;margin:0 .7rem;font-size:.95rem;opacity:.9}
+ nav a:hover,nav a.on{opacity:1;text-decoration:underline}
  .hero{background:#FF6B6B;color:#fff;text-align:center;padding:3.5rem 1rem 3rem}
  .hero h1{margin:.4rem 0;font-size:2.2rem} .hero p{opacity:.95;max-width:34rem;margin:.5rem auto}
  .wrap{max-width:760px;margin:0 auto;padding:2rem 1rem}
  .btn{display:inline-block;background:#13233A;color:#fff;text-decoration:none;
       border-radius:999px;padding:.8rem 1.8rem;margin-top:1rem;font-weight:600}
+ .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1.5rem 0}
+ .card{border:1px solid #eee;border-radius:12px;padding:1.1rem;background:#fff;text-decoration:none;color:#13233A}
+ .card b{display:block;margin-bottom:.3rem}
+ .card span{font-size:.9rem;color:#555}
  ul{line-height:1.7} footer{color:#888;text-align:center;padding:2rem;font-size:.85rem}
+ footer a{color:#888}
  .badge{font-size:.8rem;background:rgba(255,255,255,.25);border-radius:999px;padding:.2rem .8rem}
 </style>
 </head>
 <body>
+<nav>
+ <a class="on" href="/mapgenius/">Home</a>
+ <a href="/mapgenius/features/">Features</a>
+ <a href="/mapgenius/how-to-play/">How to play</a>
+ <a href="/mapgenius/faq/">FAQ</a>
+ <a href="/mapgenius/publisher/">Publisher tool</a>
+ <a href="/mapgenius/support/">Support</a>
+</nav>
 <div class="hero">
  <span class="badge">by Uplyfire</span>
  <h1>🌍 MapGenius</h1>
@@ -25,6 +41,13 @@
  <a class="btn" href="https://play.google.com/store/apps/details?id=com.uplyfire.mapgenius&referrer=utm_source%3Dlanding%26utm_medium%3Dsocial%26utm_campaign%3Dfind5_bio">Get it on Google Play — free</a>
 </div>
 <div class="wrap">
+ <h2>Explore</h2>
+ <div class="cards">
+  <a class="card" href="/mapgenius/features/"><b>Features</b><span>243 countries, 12 quiz categories, Study Mode, rankings, themes and more.</span></a>
+  <a class="card" href="/mapgenius/how-to-play/"><b>How to play</b><span>Pick a category, pick a difficulty, tap the map. That's the whole rule.</span></a>
+  <a class="card" href="/mapgenius/faq/"><b>FAQ</b><span>Pricing, offline play, languages, iOS plans — the short answers.</span></a>
+  <a class="card" href="/mapgenius/support/"><b>Support</b><span>Contact, bug reports, privacy policy and terms.</span></a>
+ </div>
  <h2>What's inside</h2>
  <ul>
   <li><b>243 countries & territories</b> and 587+ places: capitals, flags, rivers, mountains, monuments, islands, lakes, deserts, waterfalls</li>
@@ -34,19 +57,16 @@
  </ul>
  <h2>Follow the 5-second challenge</h2>
  <p>We post a daily "find the country in 5 seconds" round as short videos —
- find us as <b>@mapgenius</b> on TikTok, Instagram and YouTube.</p>
+ find us as <b>@mapgenius</b> on TikTok, <b>@mapgenius.app</b> on Instagram and Threads,
+ and <b>@mapgenius-app</b> on YouTube. Every day one country, the answer lands the next day.</p>
  <h2>MapGenius Publisher</h2>
  <p>MapGenius Publisher is our internal, first-party tool used to publish the
  game's own promotional videos to our own social accounts and to read their
- basic statistics. It serves no third-party users.</p>
- <p>MapGenius Publisher uses <b>YouTube API Services</b> to manage our own
- channel's videos — see our
- <a href="/legal/mapgenius/privacy-policy">Privacy Policy</a> (Section 17,
- incl. the <a href="http://www.google.com/policies/privacy">Google Privacy
- Policy</a>) and <a href="/legal/mapgenius/terms">Terms &amp; Conditions</a>;
- use of the tool is also governed by the
- <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.</p>
+ basic statistics. It serves no third-party users —
+ <a href="/mapgenius/publisher/">read more about how it works</a>.</p>
 </div>
-<footer>© 2026 Uplyfire · uplyfire@gmail.com</footer>
+<footer>© 2026 Uplyfire · <a href="mailto:uplyfire@gmail.com">uplyfire@gmail.com</a> ·
+ <a href="/legal/mapgenius/privacy-policy">Privacy Policy</a> ·
+ <a href="/legal/mapgenius/terms">Terms &amp; Conditions</a></footer>
 </body>
 </html>

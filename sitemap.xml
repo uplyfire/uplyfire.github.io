@@ -6,6 +6,36 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://uplyfire.github.io/mapgenius/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/mapgenius/features/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/mapgenius/how-to-play/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/mapgenius/faq/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/mapgenius/support/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uplyfire.github.io/mapgenius/publisher/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://uplyfire.github.io/legal/compoundly/privacy-policy</loc>
     <priority>0.6</priority>
   </url>
